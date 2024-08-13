@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Alejandro Moral">
+    <meta name="keywords" content="kanji, study, kanji cards, kanji flashcards, kanji order, stroke order, japanese kanji">
+    <meta name="description" content="Sorted lists of Kanji according to your preferences along with information for writing your own Kanji cards.">
+    <meta name="google-site-verification" content="lc0JfiI6YRGaH4r6EG6STXJuvGBk0zt9GRL6ObVW4H8">
+
+    <title>KanjiList.org</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/sinorca-screen.css" title="default style">
+    <link rel="shortcut icon" type="image/png" href="/static/img/favicon color.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYF8EWNJM7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RYF8EWNJM7');
+    </script>
+
+    <!-- Google Ads -->
+    <script data-ad-client="ca-pub-9889347533960375" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <style>
+        @media screen and (max-width: 692px){
+            #side-bar {
+                width: 100%;  
+                float: none;
+                clear: none;
+            }
+            #main-copy {
+                float: none;
+                margin: 0;
+            }
+            #validation {
+                display: none;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link for non-visual user agents -->
+    <div id="top"><a href="#main-copy" class="doNotDisplay doNotPrint">Skip to main content.</a></div>
+
+    <!-- Header Section -->
+<!-- Header Section -->
+<header>
+    <div class="midHeader">
+        <h1 class="headerTitle">
+            <span class="highlight">亀</span> KanjiList.org
+        </h1>
+    </div>
+    <div class="subHeader">
+        <span class="doNotDisplay">Navigation:</span>
+        <a href="/">Home</a> |
+        <a href="/kanji/3.html">Kanji Lists</a> |
+        <a href="/kanji/3.html">Vocabulary Lists</a> |
+        <a href="/kanji/3.html">Practice</a> |
+    </div>
+</header>
+
+
+    <!-- Sidebar Section -->
+    <aside class="sidebar-block" id="side-bar">
+        <div class="sidebar-block-1">
+            <p class="sidebar-title" id="sidebar-title">Kanji Lists:</p>
+            <ul>
+                <li><a href="/kanji-list-by-jlpt-level">&rsaquo; by JLPT-level</a></li>
+                <li><a href="/kanji-list-by-grade">&rsaquo; by grade</a></li>
+                <li><a href="/kanji-list-by-freq">&rsaquo; by frequency-of-use</a></li>
+            </ul>
+        </div>
+        
+        <!-- Advertisement Section -->
+        <div class="sidebar-block-2">
+            <p class="sidebar-title">Advertisements</p>
+            <span class="sidebar-text">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- kanjicards | side bar | square -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9889347533960375"
+                     data-ad-slot="5564620047"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </span>
+        </div>
+    </aside>
+    
+    
+ <!-- Main Content Section -->
+ <div class="block" id="main-block">
+    <section class="sub-block" id="sub-block-1">
+      <h1 class="sub-block-title">{{ kanji_symbol }}</h1>
+      <div class="kanji-container">
+        <img src="/static/strikepng/{{ id }}.png" alt="kanji stroke order for {{ kanji_symbol }}" width="80" class="centered-image" />
+        <ul>
+          <li>Kun: {{ kun }}</li>
+          <li>On: {{ on }}</li>
+          <li>Meaning: {{ meaning }}</li>
+          <li class="examples">
+            Examples:
+            <div>
+              {{ table_data|safe }}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div style="clear:both;"></div>
+
+  </div>
+  
+
+    
+
+    <!-- Footer Section -->
+    <!-- Footer Section -->
+    <div class="footer1">
+        <div id="footertext">
+            <a href="/privacy" class="doNotPrint">Acknowledgements</a> | 
+            <a href="/privacy" class="doNotPrint">Privacy</a> | 
+            <a href="/Imprint" class="doNotPrint">Imprint</a>
+        </div>
+    </div>
+</body>
+</html>
