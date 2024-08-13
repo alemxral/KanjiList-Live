@@ -1,0 +1,338 @@
+/* Reset padding and margin */
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(93, 94, 95);
+  font-family: 'Verdana', Arial;
+}
+
+/* Base styles for the sidebar */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 300px; /* Maximum width for larger screens */
+    background-color: #000000;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Logo styles */
+.sidebar .logo {
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #28ae4c, #509bf5);
+  width: 90%; /* Full width of sidebar */
+  height: auto; /* Adjust height automatically */
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 24px; /* Space below the logo */
+}
+
+.sidebar .logo h1 {
+  font-size: 1.5em; /* Base font size */
+  color: white;
+  margin: 0; /* Remove default margin */
+  text-align: center;
+  width: 100%; /* Full width of the logo box */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; 
+}
+
+
+
+/* Navigation styles */
+.sidebar .navigation {
+  position: fixed;
+
+}
+
+
+
+
+
+
+
+
+.sidebar .navigation ul li {
+  padding: 16px 0;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.sidebar .navigation ul li a {
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.sidebar .navigation ul li a:hover,
+.sidebar .navigation ul li a:focus,
+.sidebar .navigation ul li a:active {
+  color: #4cd350; /* A softer green color */
+}
+
+/* Subtle green effect for icons on hover */
+.sidebar .navigation ul li a:hover .icons,
+.sidebar .navigation ul li a:focus .icons,
+.sidebar .navigation ul li a:active .icons {
+  filter: invert(30%) sepia(30%) saturate(150%) hue-rotate(120deg); /* Adjusted for a softer green */
+}
+
+/* Ads panel styling */
+.sidebar .ads-panel {
+    background: #1a1a1a; /* Dark background for the ads panel */
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    flex-shrink: 0; /* Ensure it doesn't shrink */
+}
+
+.sidebar .ads-panel .ads-title {
+    color: #ffffff;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+
+
+.main-container {
+  
+  margin-left: 300px; /* Adjusted for the sidebar width */
+  margin-bottom: 300px;
+  display: flex;
+
+  
+}
+
+.topbar {
+  margin-left: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #101010;
+  padding: 5px 10px; /* Reduced padding for a smaller top bar */
+  position: relative;
+  z-index: 10; /* Ensure it stays on top of other content */
+  height: 60px; /* Set a fixed height for the top bar */
+}
+
+
+.topbar-ad {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Content styling */
+.main-container .content {
+  flex: 1; /* Take up remaining space in the main container */
+  padding: 20px; /* Add padding for content */
+}
+
+
+.spotify-playlists {
+  background-color: #1c1c1c; /* Dark background for the box */
+  border-radius: 8px; /* Rounded corners for the box */
+  padding: 20px; /* Space inside the box */
+  margin-bottom: 20px; /* Space below the box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for a 3D effect */
+}
+
+.spotify-playlists h2 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.spotify-playlists .list {
+  display: flex;
+   /* Allow items to wrap to next line if necessary */
+  gap: 20px; /* Space between items */
+}
+
+.spotify-playlists .item {
+  background-color: #282828; /* Slightly lighter background for items */
+  border-radius: 6px; /* Rounded corners for items */
+  padding: 15px; /* Space inside each item */
+  width: calc(50% - 20px); /* Adjust width for two items per row with gap */
+  box-sizing: border-box; /* Include padding and border in width */
+  transition: background-color 0.3s; /* Smooth background color change on hover */
+}
+
+
+/* Hover effect for items */
+.spotify-playlists .item:hover {
+  background-color: #333333; /* Slightly lighter background on hover */
+}
+
+.spotify-playlists .list .item img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.spotify-playlists .list .item .play {
+  position: relative;
+}
+
+
+.spotify-playlists .list .item:hover .play .fa {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+
+.spotify-playlists .item h4 {
+  color: #ffffff; /* White text color */
+  font-size: 18px; /* Font size for the item title */
+  margin-bottom: 5px; /* Space below the title */
+}
+
+.spotify-playlists .item p {
+  color: #b3b3b3; /* Lighter gray text color */
+  font-size: 14px; /* Font size for the item description */
+  line-height: 1.4; /* Line height for better readability */
+}
+
+
+
+/* Preview styles */
+.preview {
+  background: linear-gradient(to right, #28ae4c, #509bf5);
+  padding: 15px 80px;
+  display: flex;
+  justify-content: space-between;
+ 
+  bottom: 0; /* Align to the bottom of the page */
+  left: 0; /* Align to the left edge */
+  right: 0; /* Align to the right edge */
+ 
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+ 
+}
+
+.preview h6 {
+  color: #ffffff;
+  text-transform: uppercase;
+ 
+  font-size: 14px; /* Slightly larger font size for better readability */
+  margin: 0; /* Remove bottom margin */
+}
+
+.preview p {
+  color: #ffffff;
+  font-size: 16px; /* Adjust font size as needed */
+  font-weight: 500;
+  margin: 0; /* Remove default margin */
+}
+
+.preview .additional-info {
+  display: flex;
+  gap: 20px; /* Space between items */
+}
+
+.preview .additional-info a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+/* Icons styles */
+.icons {
+  width: 20px; /* Set the width */
+  height: 20px; /* Set the height */
+  filter: invert(100%) brightness(90%); /* Reverse colors and adjust brightness */
+  display: inline-block; /* Ensure it behaves like an inline element */
+  margin-right: 12px; /* Space between icon and text */
+  transition: filter 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+      padding: 16px; /* Adjust padding for smaller screens */
+      max-width: 240px; /* Adjust max-width for smaller screens */
+  }
+
+  .sidebar .logo h1 {
+      font-size: 1em; /* Adjust font size for smaller screens */
+  }
+
+  .main-container {
+      margin-left: 240px; /* Adjust for sidebar width */
+  }
+
+  .topbar {
+      padding: 10px 20px; /* Adjust padding for smaller screens */
+  }
+
+  .spotify-playlists h2 {
+      font-size: 20px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+      padding: 12px; /* Further adjust padding for very small screens */
+      max-width: 200px; /* Further adjust max-width for very small screens */
+  }
+
+     /* Continue from previous media query for very small screens */
+     .sidebar .logo h1 {
+      font-size: 0.8em; /* Further reduce font size for very small screens */
+  }
+
+  .main-container {
+      margin-left: 200px; /* Adjust for sidebar width */
+  }
+
+  .topbar {
+      padding: 8px 15px; /* Further adjust padding for very small screens */
+  }
+
+  .spotify-playlists h2 {
+      font-size: 18px; /* Further reduce font size for very small screens */
+  }
+
+  .spotify-playlists .list .item {
+      min-width: 120px; /* Adjust minimum width for very small screens */
+      width: 140px; /* Adjust width for very small screens */
+  }
+
+  .preview {
+      padding: 10px 20px; /* Adjust padding for very small screens */
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center elements horizontally */
+  }
+
+  .preview h6 {
+      font-size: 10px; /* Adjust font size for very small screens */
+  }
+
+  .preview p {
+      font-size: 12px; /* Adjust font size for very small screens */
+  }
+}
