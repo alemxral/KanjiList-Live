@@ -7,31 +7,12 @@
     <meta charset="UTF-8">
     <meta name="keywords" content="kanji, study, kanji cards, kanji flashcards, kanji order, stroke order, japanese kanji">
     <meta name="description" content="Sorted lists of Kanji according to your preferences along with information for writing your own Kanji cards.">
-	<link rel="stylesheet" type="text/css" href="/static/css/sinorca-screen.css" title="default style" />
+	<link rel="stylesheet" type="text/css" href="/backend/static/css/sinorca-screen.css" title="default style" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 	<meta name="google-site-verification" content="lc0JfiI6YRGaH4r6EG6STXJuvGBk0zt9GRL6ObVW4H8" />
        
-    <style>
-        @media screen and (max-width: 692px){
-            #side-bar {
-                width: 100%;  
-                float: none;
-                clear: none;
-            }
-            #main-copy {
-                float: none;
-                margin: 0;
-            }
-            #validation {
-                display: none;
-            }
-            img {
-                max-width: 100%;
-                height: auto;
-            }
-        }
-    </style>
+
         
 </head>
 <body>
@@ -39,7 +20,7 @@
 	<div id="top"><a href="#main-copy" class="doNotDisplay doNotPrint">Skip to main content.</a></div>
 	
 	<!-- ##### Header ##### -->
-	<div id="header">
+	<div class="header">
 		<div class="superHeader">
 		</div>
 		<div class="midHeader">
@@ -48,13 +29,13 @@
             </h1>	      	</div>
 		<div class="subHeader">
 			<span class="doNotDisplay">Navigation:</span>
-			<a href="/" class="highlight">Home</a> |
-			<a href="/kanji-list-by-freq.html">Kanji Lists</a> |
-			<a href="/vocabulary-list.html">Vocabulary Lists</a> |
+			<a href="/" class="highlight">Home</a> 
+			<a href="/kanji-list-by-freq.html">Kanji Lists</a> 
+			<a href="/vocabulary-list.html">Vocabulary Lists</a> 
 		</div>
 	</div>
 	<!-- ##### Side Bar ##### -->
-	<div id="side-bar">
+	<div class="side-bar">
 		<div>
 			
 			<p class="sideBarTitle">Menu:</p>
@@ -75,8 +56,8 @@
 	
 	</div>	
 	<!-- ##### Main Copy ##### -->
-	<div id="main-copy">
-        <div class="block" id="main-block">
+	<div class="main-copy">
+        <div class="main-block">
             <!-- Introduction Section -->
             <section class="sub-block" id="sub-block-1">
                 <h1 class="sub-block-title">Welcome to KanjiList.org</h1>
@@ -84,16 +65,16 @@
                 <div class="image-row">
                     <div class="img-box">
                         <div class="image-container">
-                        <img src="/static/img/kanjimg.png" alt="Kanji Introduction" id="responsive-image1" class="responsive-image">
+                            <img src="/static/img/kanjimg.png" alt="Kanji Introduction" id="responsive-image1" class="responsive-image">
                         <div class="overlay">
-                                <a href="/link-to-page" class="overlay-link">See Kanji Lists</a>
+                                <a href="/kanji-list-by-freq.html" class="overlay-link">See Kanji Lists</a>
                         </div>
                         </div>
                     
                         <div class="image-container">
                          <img src="/static/img/vocabulary.png" id="responsive-image2" class="responsive-image">
                         <div class="overlay">
-                                <a href="/another-link" class="overlay-link">See Vocabulary Lists</a>
+                                <a href="/vocabulary-list.html" class="overlay-link">See Vocabulary Lists</a>
                         </div>
                         </div>
                     </div>       
@@ -109,13 +90,13 @@
                 <p> Discover our comprehensive Kanji lists, meticulously organized by JLPT level, grade, and frequency of use. Whether you're a beginner or looking to refine your skills, our lists make it effortless to find and study the characters that are essential for your learning journey. Here’s a glimpse of what you can expect:
                     <ul>
                         <li>                   
-                           <strong>Grades:</strong>  Access Kanji lists organized by school grade, perfect for tracking progress or revisiting foundational characters.
+                           Grades:  Access Kanji lists organized by school grade, perfect for tracking progress or revisiting foundational characters.
                         <li>
-                           <strong>JLPT Levels:</strong>  Find Kanji categorized by the Japanese-Language Proficiency Test levels, from N5 to N1, ensuring you focus on the characters relevant to your current study stage.
+                           JLPT Levels:  Find Kanji categorized by the Japanese-Language Proficiency Test levels, from N5 to N1, ensuring you focus on the characters relevant to your current study stage.
    
                         </li>
                         <li>
-                           <strong>Frequency of Use:</strong>  Explore characters based on their commonality in everyday Japanese, helping you prioritize the most useful Kanji for practical understanding.
+                           Frequency of Use:  Explore characters based on their commonality in everyday Japanese, helping you prioritize the most useful Kanji for practical understanding.
 
                         </li>
 
@@ -129,13 +110,14 @@
             <!-- Vocabulary Lists Section -->
             <section class="sub-block" id="sub-block-3">
                 <h1 class="sub-block-title">Build Your Vocabulary</h1>
-                <p>Alongside Kanji, learning the right vocabulary is key to mastering Japanese. Browse through our curated lists to find words organized by topic, level, and usage frequency.
+                <p>Alongside Kanji, learning the right vocabulary is key to mastering Japanese. Browse through our curated lists to find words organized by topic, level, and usage frequency.Features of Our Vocabulary Lists:
                     
-                    <ul> Features of Our Vocabulary Lists:
-                    <li><strong>Organized by Word Type:</strong> Find targeted lists for verbs, adjectives, nouns, and other word types to enhance your understanding of Japanese grammar and usage.</li>
-                    <li><strong>Varied by Number of Words:</strong> Choose from lists of different sizes to match your learning goals, whether you need a broad overview or a focused set of terms.</li>
-                    <li><strong>Sorted by Topic:</strong> Explore vocabulary related to specific subjects or themes, making it easier to learn relevant terms for various contexts.</li>
-                    <li><strong>Level-Based Lists:</strong> Access words categorized by proficiency level to ensure you're studying terms appropriate to your current skills.</li>
+                
+                    <ul> 
+                    <li>Organized by Word Type: Find targeted lists for verbs, adjectives, nouns, and other word types to enhance your understanding of Japanese grammar and usage.</li>
+                    <li>Varied by Number of Words: Choose from lists of different sizes to match your learning goals, whether you need a broad overview or a focused set of terms.</li>
+                    <li>Sorted by Topic: Explore vocabulary related to specific subjects or themes, making it easier to learn relevant terms for various contexts.</li>
+                    <li>Level-Based Lists: Access words categorized by proficiency level to ensure you're studying terms appropriate to your current skills.</li>
                     </ul>
                 </p>
 
@@ -153,7 +135,7 @@
 	
 
 	</div>
-	<div id="footer">
+	<div class="footer">
 		<div class="right">
 		<a href="/acknowledgements.html" class="doNotPrint">acknowledgements</a> | 
 		<a href="/privacy.html" class="doNotPrint">privacy</a> | 
