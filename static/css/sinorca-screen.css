@@ -1,0 +1,678 @@
+/*************************************
+ * TITLE: Sinorca Screen Stylesheet  *
+ * URI  : sinorca/sinorca-screen.css *
+ * MODIF: 2003-Apr-30 19:31 +0800    *
+ *************************************/
+
+
+/* ##### Common Styles ##### */
+
+body {
+  color: white;
+  background-color: rgb(54, 54, 54);
+  font-family: verdana, helvetica, arial, sans-serif;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.doNotDisplay {
+  display: none;
+}
+
+
+
+.midHeader {
+  color: white;
+  background-color: rgb(54, 54, 54);
+
+}
+
+.headerTitle {
+  font-size: clamp(1.5em, 6vw, 337%); /* Responsive font size */
+  display: flex;
+  flex-direction: row; /* Align items in a row */
+
+  font-weight: bold;
+  margin: 0 0.5em 0 0.5em;
+  padding: 0.25ex 0;
+   /* Prevent text wrapping */
+}
+
+
+.highlight {
+  padding-right: 0.25em;
+  color: #33e014;
+}
+
+
+.subHeader {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+ 
+  background-color: rgb(93, 94, 95);
+  display: flex; /* Use flexbox for layout */
+  width: 100%; /* Take full width of the screen */
+  margin: 0;
+  /* Responsive font size */
+  border-radius: 5px;
+  
+  align-items: center; /* Vertically center items */
+  justify-content: flex-start; /* Align items to the start */
+
+}
+
+.subHeader a {
+  display: inline-block; /* Use inline-block for spacing */
+ 
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0;
+  font-size: clamp(0.2em, 2vw + 1em, 1.4em);
+  padding: 0.5em; /* Increase padding */
+  border-right: 2px solid white; /* Increase border thickness */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+  
+/* Hover effect */
+.subHeader a:hover {
+  border-radius: 0px;
+  background-color: rgb(54, 54, 54); /* Darker background on hover */
+  color: #33e014; /* Bright green text color on hover */
+
+
+}
+
+
+
+
+/* ##### Side Bar ##### */
+
+.side-bar {
+  width: 15em;
+  float: left;
+  clear: left;
+  box-sizing: border-box;
+
+  border-right: 1px solid rgb(93, 94, 95);
+}
+
+.side-bar div {
+  border-bottom: 1px solid rgb(93, 94, 95);
+  width: auto;}
+
+.sideBarTitle {
+  font-weight: bold;
+  margin: 0 0 0.5em 2.5mm;
+  padding: 1em 0 0 0;
+
+}
+
+.side-bar ul {
+  border-top: 1px solid rgb(93, 94, 95);
+
+  list-style-type: none;
+  list-style-position: outside;
+  margin: 0;
+  padding: 0 0 1.1em 0;
+}
+
+.side-bar li {
+  margin: 0;
+  padding: 0.1ex 0;  /* Circumvents a rendering bug (?) in MSIE 6.0 */
+}
+
+.side-bar a, .thisPage {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-decoration: none;
+  margin: 0;
+  padding: 0.75em 1ex 0.75em 5mm;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+
+}
+
+
+
+.side-bar a:hover {
+  color: #33e014; /* White text on hover for contrast */
+  background-color: rgb(93, 94, 95); /* Darker blue background on hover */
+  text-decoration: none;
+}
+
+.sideBarText {
+  line-height: 1.5em;
+  margin: 0 0 1em 0;
+  padding: 0 1.5ex 0 2.5mm;
+  display: block;
+}
+
+.side-bar .sideBarText a {
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.side-bar .sideBarText a:hover {
+  color: rgb(0,102,204);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.lighterBackground {
+  color: inherit;
+  background-color: white;
+}
+
+
+/* ##### Main Copy ##### */
+
+.main-copy {
+  color: rgb(255, 255, 255);
+  background-color: rgb(54, 54, 54);
+  height: 100%;
+  text-decoration: none;
+
+  padding: 0;
+  text-align: justify;
+
+  margin: 0 0em 0em 15em;
+  box-sizing: border-box;
+  border-left: 1px solid rgb(93, 94, 95);
+  display: flexbox;
+  flex-wrap: wrap;
+}
+
+
+
+
+/* Container for images */
+
+/* Ensure kanji-row takes full width and height */
+.kanji-row {
+  border: 3px solid rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box; /* Include border and padding in the width/height */
+  overflow: hidden; /* Hide any overflowing content */
+}
+
+/* Adjust kanji-box to fit within kanji-row */
+.kanji-box {
+  padding: 2em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Full width of the parent container */
+  height: auto; /* Adjust height automatically based on content */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  box-sizing: border-box; /* Ensure padding is included in width/height */
+}
+
+/* Ensure list items within kanji-box fit properly */
+.kanji-box li, .kanji-box lu {
+  padding-right: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; /* Take full width of parent */
+  box-sizing: border-box; /* Include padding in width */
+  word-wrap: break-word; /* Break long words */
+}
+
+.kanji-box span {
+  padding: 0.2em 0em 0em 1em;
+  font-size: 4rem;
+  
+}
+
+
+
+
+/* Style table to be responsive and stay within its container */
+.kanji-box table {
+  width: 100%; /* Ensure table takes full width of the container */
+  table-layout: fixed; /* Prevent table from overflowing its container */
+  overflow-x: auto; /* Enable horizontal scroll if needed */
+  border-collapse: collapse; /* Collapse borders for cleaner look */
+}
+
+.kanji-box th, .kanji-box td {
+  padding: 0.5em;
+  word-wrap: break-word; /* Ensure table content wraps */
+  box-sizing: border-box; /* Include padding in width calculations */
+}
+
+@media (max-width: 768px) {
+  .kanji-box {
+    padding: 1em; /* Reduce padding on smaller screens */
+  }
+
+  .kanji-box li, .kanji-box lu {
+    padding-right: 1em; /* Adjust padding for smaller screens */
+  }
+
+  .kanji-box table {
+    font-size: 0.9em; /* Reduce font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .kanji-box {
+    padding: 0.5em; /* Further reduce padding on very small screens */
+  }
+
+  .kanji-box table {
+    font-size: 0.8em; /* Further reduce font size */
+  }
+}
+
+
+
+
+
+
+.kanji-box img {
+  position: relative;
+  filter: invert(100%) ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Full width of the parent container */
+  height: auto; /* Adjust height automatically based on content */
+  flex-wrap: wrap;
+}
+
+.image-row {
+
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+ 
+
+}
+
+
+.img-box {
+
+  background-color: #33e014;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0%;
+  padding: 0%;
+
+
+}
+
+
+
+
+.image-container {
+  margin: 0%;
+  padding: 0%;
+  position: relative;
+  background-color:rgb(93, 94, 95) ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain; 
+ 
+  border: 2px solid rgb(255, 255, 255); /* Border around the container */
+  width: 100%; /* Full width of the parent container */
+  height: 100%; /* Adjust height automatically based on content */
+  border-radius: 5px;
+}
+
+#responsive-image1 {
+ 
+  width: 100%; /* Make the image take the full width of the container */
+  height: 100%;
+  object-fit: contain; 
+ 
+
+
+}
+
+#responsive-image2 {
+  width: 100%; /* Make image fill container */
+  height: 100%; /* Maintain aspect ratio */
+  filter: invert(100%);
+ 
+  object-fit: contain; 
+}
+
+
+
+
+/* To ensure images inside the container are the same size */
+
+
+.image-box > .image-container {
+  flex: 1 1 50%; /* Each image takes up half of the container’s width */
+  object-fit: cover; /* Ensure images cover the container area */
+}
+
+/* Overlay styling */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(93, 94, 95, 1); /* Semi-transparent background */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Smooth transition */
+  border-radius: 5px; /* Match with image border radius */
+}
+
+
+.overlay-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 2.5); /* Slightly darker background for the link box */
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+.main-copy p {
+  color: white;
+  margin: 1em 1ex 2em 1ex;
+  padding: 0.5mm 5mm 5mm 5mm;
+  word-wrap: break-word;
+
+
+}
+
+
+.main-copy img {
+  color: white;
+  margin: 1em 1ex 2em 1ex;
+  padding: 0.5mm 5mm 5mm 5mm;
+
+}
+
+.main-copy li {
+  display: flex;
+ 
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+ 
+  padding: 0em 2em 2em 0em;
+  text-decoration: none;
+
+  overflow: hidden; /* Hide any overflowed text */
+  text-overflow: ellipsis; /* Show ellipsis (...) for text that overflows */
+  flex: 1;
+
+}
+
+
+
+
+
+.main-copy a {
+  display: flex;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+ 
+  padding: 2em 5mm 5mm 5mm;
+  text-decoration: none;
+
+}
+
+.strong{
+
+  display: flex;
+  color: #33e014;
+  background-color: #33e014;
+  flex-wrap: nowrap;
+  text-wrap: nowrap;
+
+}
+
+.main-copy a:visited {
+  text-decoration: none;
+  border-bottom:1px dashed rgb(255, 255, 255);
+}
+
+.main-copy a:hover {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.main-copy h1 {
+  color: white;
+  background-color: rgb(93, 94, 95);
+  font-size: 100%;
+  font-weight: bold;
+  margin: 3em 0 0 1em;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 3mm 3mm 3mm 3mm;
+  border-radius: 5px;
+  word-wrap: break-word
+
+}
+
+
+
+
+/* ##### Footer ##### */
+
+.empty-space{
+
+height: 10ex;
+
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  color: white;
+  background-color: rgb(93, 94, 95);
+  font-size: 91%;
+
+  padding: 1ex 2.5ex 2.5ex 2.5ex;
+  clear: both;
+  display: flex;
+
+  justify-content:center;
+}
+
+.footer .left {
+  line-height: 1.45em;
+  float: left;
+  clear: left;
+  bottom: 0;
+}
+
+.footer .right {
+  bottom: 0;
+
+  line-height: 1.45em;
+}
+
+.footer a {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+
+
+}
+
+.footer a:hover {
+  text-decoration: none;
+}
+
+
+.largeblock {
+  color: rgb(255, 255, 255);
+  background-color:rgb(54, 54, 54);
+  text-decoration: none;
+
+  
+}
+
+.sub-block-title {
+  color: white;
+  background-color: rgb(93, 94, 95);
+  margin-top: 0;
+  font-size: 100%;
+  font-weight: bold;
+  text-decoration: none;
+ 
+
+}
+
+
+
+
+.largeblock p {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap ;
+  text-decoration: none;
+  font-size: 1.1em;
+  margin: 0%;
+  padding-right: 0%;
+  
+}
+
+
+/* Hover effect */
+.largeblock a:hover {
+
+  color: #33e014; /* Bright green text color on hover */
+  border-radius: 5px; /* Adds rounded corners on hover */
+}
+
+
+
+/* Show overlay on hover */
+.image-container:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+/* Responsive adjustments */
+
+/* For screens up to 1024px */
+@media (min-width: 1024px) {
+  .image-container {
+    width: 200px; /* Adjust size for tablets */
+  }
+
+  
+.largeblock p {
+  color: rgb(255, 255, 255);
+
+  font-size: 1.5em;
+  
+  
+}
+
+
+}
+
+/* For screens up to 950px */
+@media (max-width: 950px) {
+  .subHeader {
+    font-size: 1em; /* Adjust font size for smaller screens */
+    padding: 0.5em; /* Increase padding for better spacing */
+  }
+}
+
+/* For screens up to 768px */
+@media (max-width: 768px) {
+  .image-container {
+    width: 150px; /* Adjust size for smaller tablets */
+  }
+
+
+
+
+}
+
+/* For screens up to 550px */
+@media (max-width: 550px) {
+  .subHeader {
+    border: none; /* Remove any borders */
+    font-size: 0.8em; /* Further reduce font size */
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .subHeader a {
+    border-right: none; /* Remove border from links */
+  }
+}
+
+/* For screens up to 480px */
+@media (max-width: 480px) {
+  .image-container {
+    width: 100px; /* Adjust size for mobile devices */
+  }
+
+  .overlay-link {
+    font-size: 14px; /* Smaller text size */
+    padding: 8px; /* Adjust padding */
+  }
+}
+
+/* For screens up to 320px */
+@media (max-width: 320px) {
+  .image-container {
+    width: 80px; /* Further adjust size for very small screens */
+  }
+
+  .overlay-link {
+    font-size: 12px; /* Even smaller text size */
+    padding: 6px; /* Adjust padding */
+  }
+}
+
+/* General mobile styles for screens up to 692px */
+@media screen and (max-width: 692px) {
+  .side-bar {
+    width: 100%;  
+    float: none;
+    clear: none;
+  }
+
+  .main-copy {
+    float: none;
+    margin: 0;
+  }
+
+  .validation {
+    display: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
