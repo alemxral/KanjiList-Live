@@ -1,0 +1,275 @@
+
+
+body {
+  color: black;
+  background-color: rgb(54, 54, 54);
+  font-family: verdana, helvetica, arial, sans-serif;
+  font-size: 12pt;
+  margin: 0;
+  padding: 0;
+}
+
+ html > body {
+  font-size: 12pt}
+
+
+.doNotDisplay {
+  display: none;
+}
+
+
+
+.midHeader {
+ 
+  background-color: rgb(54, 54, 54);
+  padding: 1em 1.5em; /* Adjusted padding for a more balanced size */
+  font-size: 1.1em; /* Slightly larger font size for prominence */
+  font-weight: bold; /* Bold text for emphasis */
+  height: auto; /* Allow height to adjust based on content */
+  
+}
+
+
+
+.headerTitle {
+  font-size: 337%;
+  margin: 0 0 0 4mm;
+  padding: 0.25ex 0;
+  color: white;
+  
+}
+
+.highlight {
+  color: #33e014;
+}
+
+
+
+.subHeader {
+  color: white;
+  background-color: rgb(93, 94, 95);
+  padding: 1.5ex 1.5ex;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+.subHeader a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1.5ex 1.5ex;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover effect */
+.subHeader a:hover {
+  background-color: rgb(54, 54, 54); /* Darker background on hover */
+  color: #33e014; /* Bright green text color on hover */
+  border-radius: 5px; /* Adds rounded corners on hover */
+}
+
+
+/* ##### Side Bar ##### */
+
+.sidebar-block {
+  width: 15em; /* Keep the original width for consistency */
+  float: left;
+  padding: 0; /* Remove padding to keep it compact */
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.sidebar-block-1 {
+  border-bottom: 1px solid rgb(93, 94, 95); /* Lighter border for a modern touch */
+ 
+}
+
+
+.sidebar-title {
+  font-weight: bold;
+  margin: 0;
+  padding: 0.8em 0 0.8em 1em; /* Add left padding to move title to the right */
+  font-size: 1em; /* Adjust font size for better fit */
+  color:rgb(255, 255, 255); /* Optionally, set a color for the title */
+}
+
+#side-bar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-block li {
+  padding: 0.5em 0; /* Slightly more padding for readability */
+}
+
+.sidebar-block a {
+  color: white; /* Original subtle blue for links */
+  text-decoration: none;
+  padding: 0.5em 1em; /* Consistent padding for clarity */
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+}
+
+.sidebar-block a:hover {
+  color: #33e014; /* White text on hover for contrast */
+  background-color: rgb(93, 94, 95); /* Darker blue background on hover */
+  border-radius: 3px; /* Adds rounded corners on hover */
+}
+
+.sidebar-block-2 {
+  color: inherit;
+
+}
+
+
+
+
+.sideBarText {
+  line-height: 1.4em; /* Maintain readability */
+  margin: 0 0 1em 0;
+  padding: 0 1em; /* Adjust padding for visual balance */
+}
+
+
+
+
+
+.block {
+  color: rgb(255, 255, 255);
+  background-color:rgb(54, 54, 54);
+ 
+  background-repeat: no-repeat;
+  text-align: justify;
+  line-height: 1.5em;
+  margin: 0 0 0 15em;
+  padding: 0.5mm 5mm 5mm 5mm;
+  border-left: 1px solid rgb(93, 94, 95);
+
+  
+}
+
+
+
+
+.block a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: inherit;
+
+  
+}
+
+
+
+.largeblock {
+  color: rgb(255, 255, 255);
+  background-color:rgb(54, 54, 54);
+ 
+  background-repeat: no-repeat;
+  text-align: justify;
+  line-height: 1.5em;
+  margin: 0 0 0 13em;
+  padding: 0.5mm 5mm 5mm 5mm;
+  border-left: 1px solid rgb(93, 94, 95);
+  font-size: 14pt;
+  
+}
+
+
+
+
+.largeblock a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: inherit;
+  
+}
+
+
+/* Hover effect */
+.largeblock a:hover {
+
+  color: #33e014; /* Bright green text color on hover */
+  border-radius: 5px; /* Adds rounded corners on hover */
+}
+
+
+
+
+
+.centered-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em; /* Add some space above the image */
+  margin-bottom: 1em; /* Add some space below the image */
+  filter: invert(100%);
+}
+
+
+
+
+/* Specific H1 Styling for #intro */
+.sub-block-title {
+  color: white;
+  background-color: rgb(93, 94, 95);
+  font-size: 100%;
+  font-weight: bold;
+  margin: 3em 0 0 -1ex;
+  padding: 0.8ex 0 0.5ex 1ex;
+  width: calc(100% + 4ex);
+  box-sizing: border-box;
+ 
+  border-radius: 3px; /* Rounds the border corners */
+}
+
+/* Footer Styling */
+.footer1 {
+  width: 100%;
+  clear: both; /* Clear any floats */
+  background-color: rgb(93, 94, 95); /* Match your existing footer color */
+  padding: 1em 2.5mm 2.5ex 2.5mm;
+  box-sizing: border-box;
+  text-align: center; /* Center the content */
+}
+
+#footertext {
+  color: white;
+  clear: both;
+}
+
+#footertext a {
+  color: white;
+  text-decoration: none; /* Remove underline */
+  /* Add hover and active styles if needed */
+  clear: both;
+  width: 100%;
+}
+
+
+
+
+/* Ensure body has a minimum height to push footer down */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#content {
+  min-height: 100vh; /* Ensures the content area covers the full viewport height */
+  margin-bottom: 3em; /* Adjust as needed to accommodate footer height */
+}
+
+
+
+.icons {
+  width: 20px; /* Set the width */
+  height: 20px; /* Set the height */
+  filter: invert(100%) brightness(90%); /* Reverse colors and adjust brightness */
+  display: inline-block; /* Ensure it behaves like an inline element */
+  margin: 5px; /* Optional: Add margin if needed */
+}
+
+
