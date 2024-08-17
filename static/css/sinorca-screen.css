@@ -7,6 +7,14 @@
 
 /* ##### Common Styles ##### */
 
+
+
+
+
+
+
+
+
 body {
   color: white;
   background-color: rgb(54, 54, 54);
@@ -15,6 +23,41 @@ body {
   margin: 0;
   padding: 0;
 }
+
+
+
+#cookieConsentBanner {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  z-index: 1000;
+}
+
+#cookieConsentBanner a {
+  color: #f1d600;
+  text-decoration: underline;
+}
+
+#acceptCookies {
+  background-color: #f1d600;
+  border: none;
+  padding: 8px 12px;
+  color: black;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
 
 
 
