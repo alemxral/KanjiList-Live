@@ -25,31 +25,84 @@ body {
 }
 
 
-
+/* Basic styling for the banner */
 #cookieConsentBanner {
-  display: none; /* Hidden by default */
   position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  text-align: center;
-  padding: 10px;
-  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background for contrast */
+  color: #fff; /* White text for readability */
+  padding: 15px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+  display: none; /* Hidden by default, shown when needed */
+  z-index: 9999; /* Ensure it's on top of other content */
+  text-align: center; /* Center text and button */
+  font-family: Arial, sans-serif; /* Consistent font */
 }
 
+/* Styling for the message text */
+#cookieConsentBanner p {
+  margin: 0;
+  font-size: 16px; /* Adjusted for readability */
+  line-height: 1.5;
+  display: inline; /* Ensure the message and link are inline */
+}
+
+/* Styling for the link */
 #cookieConsentBanner a {
-  color: #33e014;
-  text-decoration: underline;
+  color: #fff; /* White link text color */
+  text-decoration: underline; /* Underline for links */
 }
 
+/* Styling for the button */
 #acceptCookies {
-  background-color: #33e014;
+  background-color: #33e014; /* Bright button color for visibility */
+  color: #333; /* Dark text for readability */
   border: none;
-  padding: 8px 12px;
-  color: black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
+  margin-left: 10px;
+  text-transform: uppercase;
 }
+
+/* Button hover effect */
+#acceptCookies:hover {
+  background-color: #28a745; /* Slightly darker green on hover */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+  #cookieConsentBanner {
+    padding: 10px; /* Reduce padding on smaller screens */
+    font-size: 14px; /* Slightly smaller text for smaller screens */
+  }
+
+  #acceptCookies {
+    padding: 8px 15px; /* Adjust button padding */
+    font-size: 14px; /* Adjust font size */
+    margin-left: 5px; /* Reduce margin for smaller screens */
+  }
+}
+
+@media (max-width: 400px) {
+  #cookieConsentBanner {
+    font-size: 12px; /* Smaller font size for very small screens */
+  }
+
+  #acceptCookies {
+    padding: 6px 12px; /* Further adjust button padding */
+    font-size: 12px; /* Adjust font size */
+    margin-left: 5px; /* Keep the margin consistent */
+  }
+
+  #cookieConsentBanner p {
+    font-size: 12px; /* Ensure text is readable on small screens */
+  }
+}
+
 
 
 
