@@ -57,7 +57,7 @@ body {
 
 /* Styling for the button */
 #acceptCookies {
-  background-color: #33e014; /* Bright button color for visibility */
+  background-color: rgb(23, 233, 111); /* Bright button color for visibility */
   color: #333; /* Dark text for readability */
   border: none;
   border-radius: 5px;
@@ -105,7 +105,144 @@ body {
 
 
 
+/* Container for the Privacy Policy Section */
+.privacy-policy {
+  padding: 2rem; /* Padding around the section */
+ 
+  line-height: 1.6; /* Line spacing for readability */
+  max-width: 80%; /* Max width of the content */
+  margin: 0 auto; /* Center the section */
+}
 
+/* Section Heading */
+.privacy-policy h2 {
+  font-size: 2rem; /* Responsive font size */
+  margin-bottom: 1.5rem; /* Space below the heading */
+  text-align: center; /* Center-align the main heading */
+}
+
+/* Subheadings */
+.privacy-policy h3 {
+  font-size: 1.5rem; /* Slightly smaller than the main heading */
+  margin-top: 2rem; /* Space above subheadings */
+  margin-bottom: 1rem; /* Space below subheadings */
+}
+
+/* Paragraph Text */
+.privacy-policy p {
+  font-size: 1rem; /* Standard font size for paragraph text */
+  margin-bottom: 1rem; /* Space below paragraphs */
+}
+
+/* Lists (for bullet points) */
+.privacy-policy ul {
+  padding-left: 1.5rem; /* Indentation for list items */
+  margin-bottom: 1.5rem; /* Space below the list */
+}
+
+.privacy-policy ul li {
+  font-size: 1rem; /* Same font size as paragraph text */
+  margin-bottom: 0.5rem; /* Space between list items */
+}
+
+/* Links */
+.privacy-policy a {
+  color: #0000EE; /* Standard link color */
+  text-decoration: underline; /* Underline the links */
+}
+
+.privacy-policy a:hover {
+  text-decoration: none; /* Remove underline on hover */
+}
+
+/* Contact Information */
+.privacy-policy p a {
+  font-weight: bold; /* Bold the contact email */
+}
+
+
+
+/* Container for the Support Section */
+#support-section {
+  padding: 2rem; /* Padding around the section */
+ 
+  line-height: 1.7; /* Line spacing for readability */
+  max-width: 80%; /* Max width of the content */
+  margin: 2rem auto; /* Center the section with space above */
+  text-align: center; /* Center-align all content in the section */
+  background-color: #cfcfcf; /* Light grey background for contrast */
+  border-radius: 10px; /* Rounded corners for the section */
+}
+
+/* Section Heading */
+#support-section h2 {
+  color: #000000;
+  font-size: 2rem; /* Responsive font size */
+  margin-bottom: 1.5rem; /* Space below the heading */
+}
+
+/* Paragraph Text */
+#support-section p {
+  font-size: 1rem; /* Standard font size for paragraph text */
+  margin-bottom: 1rem; /* Space below paragraphs */
+  color: #000000; /* Darker text color for readability */
+}
+
+/* Donate Button */
+#support-section .donate-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem; /* Padding for the button */
+  font-size: 1.2rem; /* Larger text for the button */
+  color: rgb(0, 0, 0); /* White text color */
+  background-color: #ffffff; /* Green background color */
+  text-decoration: none; /* Remove underline from link */
+  border-radius: 5px; /* Rounded corners for the button */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+#support-section .donate-button:hover {
+  
+  background-color: rgb(23, 233, 111); /* Change background color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #support-section {
+      padding: 1.5rem; /* Adjust padding for smaller screens */
+      font-size: 0.9rem; /* Slightly reduce font size on smaller screens */
+  }
+
+  #support-section h2 {
+      font-size: 1.75rem; /* Adjust heading size */
+  }
+
+  .donate-button {
+      font-size: 1.1rem; /* Adjust button text size */
+  }
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .privacy-policy {
+      padding: 1.5rem; /* Adjust padding for smaller screens */
+      font-size: 0.9rem; /* Slightly reduce font size on smaller screens */
+  }
+
+  .privacy-policy h2 {
+      font-size: 1.75rem; /* Adjust main heading size */
+  }
+
+  .privacy-policy h3 {
+      font-size: 1.25rem; /* Adjust subheading size */
+  }
+
+  .privacy-policy ul li {
+      font-size: 0.9rem; /* Adjust list item size */
+  }
+}
 
 
 
@@ -141,7 +278,7 @@ body {
 
 .highlight {
   padding-right: 0.25em;
-  color: #33e014;
+  color: rgb(23, 233, 111);
 }
 
 
@@ -181,7 +318,7 @@ body {
 .subHeader a:hover {
   border-radius: 0px;
   background-color: rgb(54, 54, 54); /* Darker background on hover */
-  color: #33e014; /* Bright green text color on hover */
+  color: rgb(23, 233, 111); /* Bright green text color on hover */
 
 
 }
@@ -239,7 +376,7 @@ body {
 
 
 .side-bar a:hover {
-  color: #33e014; /* White text on hover for contrast */
+  color: rgb(23, 233, 111); /* White text on hover for contrast */
   background-color: rgb(93, 94, 95); /* Darker blue background on hover */
   text-decoration: none;
 }
@@ -575,8 +712,8 @@ body {
 .strong{
 
   display: flex;
-  color: #33e014;
-  background-color: #33e014;
+  color: rgb(23, 233, 111);
+  background-color: rgb(23, 233, 111);
   flex-wrap: nowrap;
   text-wrap: nowrap;
 
@@ -714,7 +851,7 @@ height: 10ex;
 /* Hover effect */
 .largeblock a:hover {
 
-  color: #33e014; /* Bright green text color on hover */
+  color: rgb(23, 233, 111); /* Bright green text color on hover */
   border-radius: 5px; /* Adds rounded corners on hover */
 }
 
