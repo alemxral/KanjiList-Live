@@ -16,7 +16,14 @@ new_head_content = '''<head>
     <link rel="stylesheet" type="text/css" href="/static/css/style.css" title="default style">
     
     <!-- Favicon -->
-    <link rel="icon" href="/static/icons/favicon.png" type="image/png">
+     <link rel="icon" type="image/png" sizes="32x32" href="static/icons/favicon-32x32.png">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="static/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/icons/favicon-16x16.png">
+    <link rel="manifest" href="static/icons/site.webmanifest">
+
     
     <!-- Schema Markup -->
     <script type="application/ld+json">
@@ -25,7 +32,7 @@ new_head_content = '''<head>
         "@type": "Organization",
         "name": "Kanjilist",
         "url": "http://www.kanjilist.org",
-        "logo": "http://www.kanjilist.org/static/icons/favicon.png"
+        "logo": "http://www.kanjilist.org/static/icons/favicon.ico"
     }
     </script>
     
@@ -45,7 +52,7 @@ new_head_content = '''<head>
 '''
 
 # Directory containing HTML files
-directory = r'C:\Users\pc\pyprojects\KanjiList\kanjilist-live'
+directory = r'C:\Users\pc\pyprojects\KanjiList\kanjilist-live\kanji'
 
 # Function to update <head> section in a file
 def update_head(file_path):
