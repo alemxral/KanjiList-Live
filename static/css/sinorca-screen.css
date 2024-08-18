@@ -683,11 +683,13 @@ height: 10ex;
   display: flex;
   flex-wrap: wrap;
   text-decoration: none;
-  justify-content:  space-between;
+  justify-content:  flex-start;
+  align-items: flex-start;
   font-size: 1.3em;
   margin-right: 0cm;
   padding-right: 0cm;
   box-sizing: border-box;
+  text-align: left;
   
   
 }
