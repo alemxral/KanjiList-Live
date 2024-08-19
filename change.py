@@ -16,11 +16,11 @@ new_head_content = '''<head>
     <link rel="stylesheet" type="text/css" href="/static/css/style.css" title="default style">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" sizes="48x48" href="static/icons/favicon.ico"> 
-    <link rel="apple-touch-icon" sizes="180x180" href="static/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/icons/favicon-16x16.png">
-    <link rel="manifest" href="static/icons/site.webmanifest">
+    <link rel="icon" type="image/x-icon" sizes="48x48" href="/static/icons/favicon.ico"> 
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png">
+    <link rel="manifest" href="/static/icons/site.webmanifest">
 
     
     <!-- Schema Markup -->
@@ -50,7 +50,7 @@ new_head_content = '''<head>
 '''
 
 # Directory containing HTML files
-directory = r'C:\Users\pc\pyprojects\KanjiList\kanjilist-live\vocabulary'
+directory = r'C:\Users\pc\pyprojects\KanjiList\kanjilist-live'
 
 # Function to update <head> section in a file
 def update_head(file_path):
