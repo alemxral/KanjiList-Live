@@ -2,7 +2,7 @@ import os
 from bs4 import BeautifulSoup, Comment
 
 # Directory containing the HTML files
-directory = r'C:\Users\pc\pyprojects\KanjiList\kanjilist-live\vocabulary'
+directory = r'C:\Users\pc\pyprojects\KanjiList\kanjilist-live\vocabulary\raw\fix'
 
 # Function to compact HTML content
 def compact_html_file(file_path):

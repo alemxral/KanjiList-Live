@@ -4,11 +4,11 @@ from bs4 import BeautifulSoup
 
 
 #import xlsx file
-_10kwords = pd.read_excel('10Kwords.xlsx') 
-_6kwords = pd.read_excel('6Kwords.xlsx') 
+_10kwords = pd.read_excel('vocabulary/raw/10Kwords.xlsx') 
+_6kwords = pd.read_excel('vocabulary/raw/6Kwords.xlsx') 
 
 #eliminate THE LAST TWO COLUMNS OF THE DATAFRAME
-_10kwords = _10kwords.iloc[:, 1:-2]
+_10kwords = _10kwords.iloc[:, 1:-3]
 _6kwords = _6kwords.iloc[:, 1:-1]
 
 
@@ -75,21 +75,21 @@ _10kwords_soup = BeautifulSoup(_10kwords_html, 'html.parser')
 
 #export all the below tables in a html file; export all the previous tables in a html file
 
-with open('noun.html', 'w', encoding='utf-8') as f:
+with open('vocabulary/raw/noun.html', 'w', encoding='utf-8') as f:
     f.write(noun_soup.prettify())
-with open('verb.html', 'w', encoding='utf-8') as f:
+with open('vocabulary/raw/verb.html', 'w', encoding='utf-8') as f:
     f.write(verb_soup.prettify())
-with open('adj.html', 'w', encoding='utf-8') as f:
+with open('vocabulary/raw/adj.html', 'w', encoding='utf-8') as f:
     f.write(adj_soup.prettify())
-with open('_01kwords.html', 'w', encoding='utf-8') as f:
+with open('vocabulary/raw/_01kwords.html', 'w', encoding='utf-8') as f:
     f.write(_01kwords_soup.prettify())
-with open('_1kwords.html', 'w', encoding='utf-8') as f:
+with open('vocabulary/raw/_1kwords.html', 'w', encoding='utf-8') as f:
     f.write(_1kwords_soup.prettify())
-with open('_2kwords.html', 'w', encoding='utf-8') as f:
+with open('vocabulary/raw/_2kwords.html', 'w', encoding='utf-8') as f:
     f.write(_2kwords_soup.prettify())
-with open('_5kwords.html', 'w', encoding='utf-8') as f:
+with open('vocabulary/raw/_5kwords.html', 'w', encoding='utf-8') as f:
     f.write(_5kwords_soup.prettify())
-with open('_10kwords.html', 'w', encoding='utf-8') as f:
+with open('vocabulary/raw/_10kwords.html', 'w', encoding='utf-8') as f:
     f.write(_10kwords_soup.prettify())
 
 

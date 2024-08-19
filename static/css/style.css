@@ -611,56 +611,64 @@ body {
   white-space-collapse: break-spaces;
 }
 
-
 .tableframe {
-  max-width: 100%; /* Allow the table to shrink and fit within the container */
-  overflow-x: auto; /* Add a horizontal scrollbar if content overflows */
   box-sizing: border-box;
-  color: white;
-  border-color: white;
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
 }
 
 .tableframe table {
-  width: 100%; /* Make the table responsive and fit within its container */
-  table-layout: fixed; /* Prevent the table from growing too wide */
-  word-wrap: break-word; /* Ensure long words break within cells */
-  border-collapse: collapse; /* Collapse borders to reduce space */
-  font-size: 0.8em; /* Reduce font size for more compact display */
+  table-layout: auto;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
 }
 
-.tableframe table td, .tableframe table th {
-  word-wrap: break-word; /* Break words to fit within the cell */
-  overflow: hidden; /* Hide overflow content */
-  text-overflow: ellipsis; /* Add ellipsis for overflow text */
-  white-space: nowrap; /* Prevent text from wrapping by default */
-  padding: 4px 6px; /* Minimize padding to reduce wasted space */
-  border: 1px solid white; /* Optional: Adjust border size to save space */
-  max-width: 100%; /* Limit cell width to container's width */
-  text-align: left; /* Align all content to the left */
+.tableframe table td,
+.tableframe table th {
+  word-break: break-all;
+  text-align: left;
+  word-wrap: break-word;
+  padding: 8px; /* Add some padding for readability */
 }
 
-/* Allow wrapping for the second, third, and fourth columns */
-.tableframe table td:nth-child(2),
-.tableframe table th:nth-child(2),
-.tableframe table td:nth-child(3),
-.tableframe table th:nth-child(3),
-.tableframe table td:nth-child(4),
-.tableframe table th:nth-child(4) {
-  white-space: normal; /* Allow text to wrap to the next line */
+/* Responsive Font Sizes */
+.tableframe table td,
+.tableframe table th {
+  font-size: x-small;
 }
 
-/* Further reduce font size on small screens */
-@media (max-width: 600px) {
-  .tableframe table {
-    font-size: 0.7em; /* Further reduce font size on smaller screens */
-  }
-  
-  .tableframe table td, .tableframe table th {
-    padding: 2px 4px; /* Reduce padding even more on small screens */
+/* Medium Devices (Tablets, 768px and up) */
+@media (min-width: 768px) {
+  .tableframe table td,
+  .tableframe table th {
+    font-size: medium;
   }
 }
+
+/* Large Devices (Desktops, 992px and up) */
+@media (min-width: 992px) {
+  .tableframe table td,
+  .tableframe table th {
+    font-size: large;
+  }
+}
+
+/* Extra Large Devices (Large Desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .tableframe table td,
+  .tableframe table th {
+    font-size: x-large;
+  }
+}
+
+
+
+
 
 
 
