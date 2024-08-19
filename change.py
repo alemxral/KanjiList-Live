@@ -7,7 +7,7 @@ new_head_content = '''<head>
     
     <!-- Meta Tags -->
     <meta charset="UTF-8">
-    <meta name="author" content="Alejandro Moral">
+    <meta name="author" content="KanjiList.org">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="kanji, study, kanji cards, kanji flashcards, kanji order, stroke order, japanese kanji">
     <meta name="description" content="Sorted lists of Kanji according to your preferences along with information for writing your own Kanji cards.">
@@ -50,7 +50,7 @@ new_head_content = '''<head>
 '''
 
 # Directory containing HTML files
-directory = r'C:\Users\pc\pyprojects\KanjiList\kanjilist-live\kanji'
+directory = r'C:\Users\pc\pyprojects\KanjiList\kanjilist-live\vocabulary'
 
 # Function to update <head> section in a file
 def update_head(file_path):
