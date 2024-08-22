@@ -264,10 +264,18 @@ body {
 
 }
 
+
+
+
 .headerTitle {
   font-size: clamp(1.5em, 6vw, 337%); /* Responsive font size */
   display: flex;
   flex-direction: row; /* Align items in a row */
+  display: flex;  /* Use flexbox for alignment */
+  align-items: center;  /* Align items vertically centered */
+  justify-content: center;  /* Center content horizontally */
+  font-size: 4vw;  /* Base font size relative to viewport width */
+  gap: 0px;  /* Space between the logo and text */
 
   font-weight: bold;
   margin: 0 0.5em 0 0.5em;
@@ -276,6 +284,7 @@ body {
 }
 
 .headerTitle img {
+  padding-top: 0.4em;
   max-width: 100%;  /* Scale down with the container */
   height: auto;  /* Maintain aspect ratio */
   width: 1em;  /* Base size relative to the font size of the title */
