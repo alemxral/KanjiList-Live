@@ -15,7 +15,8 @@
     <link rel="stylesheet" type="text/css" href="/static/css/style.css" title="default style">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" sizes="48x48" href="/static/icons/favicon.ico"> 
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/icons/logo-96x96.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/static/icons/favicon.png"> 
     <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png">
@@ -29,7 +30,7 @@
         "@type": "Organization",
         "name": "Kanjilist",
         "url": "http://www.kanjilist.org",
-        "logo": "http://www.kanjilist.org/static/icons/favicon.ico"
+        "logo": "http://www.kanjilist.org/static/icons/favicon.png"
     }
     </script>
     
@@ -76,8 +77,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 		<div class="midHeader">
             <h1 class="headerTitle">
-                <span class="highlight">亀</span> KanjiList.org
-            </h1>	      	</div>
+                <picture>
+                    <!-- Image for high-resolution displays -->
+                    <source srcset="static/icons/logo-500x500.png" media="(min-width: 1200px)">
+                    <!-- Image for medium screens -->
+                    <source srcset="static/icons/logo-96x96.png" media="(min-width: 768px)">
+                    <!-- Fallback for small screens and older browsers -->
+                    <img src="static/icons/favicon.png" alt="亀" class="highlight">
+                </picture>
+                KanjiList.org
+            </h1>
+        </div>
 		<div class="subHeader">
 			<span class="doNotDisplay">Navigation:</span>
 			<a href="/" class="highlight">Home</a> 

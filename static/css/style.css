@@ -275,6 +275,36 @@ body {
    /* Prevent text wrapping */
 }
 
+.headerTitle img {
+  max-width: 100%;  /* Scale down with the container */
+  height: auto;  /* Maintain aspect ratio */
+  width: 1em;  /* Base size relative to the font size of the title */
+}
+
+/* Adjustments for screens smaller than 768px */
+@media only screen and (max-width: 768px) {
+  .headerTitle {
+      font-size: 6vw;  /* Increase the font size */
+  }
+
+  .headerTitle img {
+      width: 1.2em;  /* Slightly increase the logo size relative to the text */
+  }
+}
+
+/* Adjustments for screens smaller than 480px */
+@media only screen and (max-width: 480px) {
+  .headerTitle {
+      font-size: 8vw;  /* Further increase the font size */
+  }
+
+  .headerTitle img {
+      width: 1.4em;  /* Further increase the logo size */
+  }
+}
+
+
+
 
 .highlight {
   padding-right: 0.25em;
