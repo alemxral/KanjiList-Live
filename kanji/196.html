@@ -64,7 +64,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 		<div class="midHeader">
             <h1 class="headerTitle">
-                <span class="highlight">亀</span> KanjiList.org
+                <picture>
+                    <!-- Image for high-resolution displays -->
+                    <source srcset="static/icons/logo-500x500.png" media="(min-width: 1200px)">
+                    <!-- Image for medium screens -->
+                    <source srcset="static/icons/logo-96x96.png" media="(min-width: 768px)">
+                    <!-- Fallback for small screens and older browsers -->
+                    <img src="static/icons/logo-50x50.png" alt="亀" class="highlight">
+                </picture>
+                KanjiList.org
             </h1>	      	</div>
 		<div class="subHeader">
 			<span class="doNotDisplay">Navigation:</span>
