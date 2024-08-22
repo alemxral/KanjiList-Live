@@ -4,11 +4,11 @@ from bs4 import BeautifulSoup
 
 
 #import xlsx file
-_10kwords = pd.read_excel('vocabulary/raw/10Kwords.xlsx') 
-_6kwords = pd.read_excel('vocabulary/raw/6Kwords.xlsx') 
+_10kwords = pd.read_excel('raw/10Kwords.xlsx') 
+_6kwords = pd.read_excel('raw/6Kwords.xlsx') 
 
 #eliminate THE LAST TWO COLUMNS OF THE DATAFRAME
-_10kwords = _10kwords.iloc[:, 1:-3]
+_10kwords = _10kwords.iloc[:, 1:-4]
 _6kwords = _6kwords.iloc[:, 1:-1]
 
 
@@ -32,15 +32,7 @@ Adjective = _6kwords[
 ]
 
 
-# print(len(Verb))
-# print(len(Noun))
-# print(len(Adjective))
 
-# sum = len(Verb) + len(Noun) + len(Adjective)
-# print(sum)
-# # #save in a matrix all the unique values of the column called Part
-# # unique = _6kwords['Part'].unique()
-# # print(unique)
 
 _01kwords_head = _10kwords.head(100)
 _1kwords_head = _10kwords.head(1000)
@@ -52,9 +44,9 @@ _10kwords_head = _10kwords.head(10000)
 
 
 # Assuming _6kwords and _10kwords are your DataFrames
-noun_html = _6kwords.to_html()
-verb_html = _6kwords.to_html()
-adj_html = _6kwords.to_html()
+noun_html = Noun.to_html()
+verb_html = Verb.to_html()
+adj_html = Adjective.to_html()
 _01kwords_html = _10kwords.to_html()
 _1kwords_html = _10kwords.to_html()
 _2kwords_html = _10kwords.to_html()
@@ -75,22 +67,60 @@ _10kwords_soup = BeautifulSoup(_10kwords_html, 'html.parser')
 
 #export all the below tables in a html file; export all the previous tables in a html file
 
-with open('vocabulary/raw/noun.html', 'w', encoding='utf-8') as f:
+with open('raw/noun.html', 'w', encoding='utf-8') as f:
     f.write(noun_soup.prettify())
-with open('vocabulary/raw/verb.html', 'w', encoding='utf-8') as f:
+with open('raw/verb.html', 'w', encoding='utf-8') as f:
     f.write(verb_soup.prettify())
-with open('vocabulary/raw/adj.html', 'w', encoding='utf-8') as f:
+with open('raw/adj.html', 'w', encoding='utf-8') as f:
     f.write(adj_soup.prettify())
-with open('vocabulary/raw/_01kwords.html', 'w', encoding='utf-8') as f:
+with open('raw/_01kwords.html', 'w', encoding='utf-8') as f:
     f.write(_01kwords_soup.prettify())
-with open('vocabulary/raw/_1kwords.html', 'w', encoding='utf-8') as f:
+with open('raw/_1kwords.html', 'w', encoding='utf-8') as f:
     f.write(_1kwords_soup.prettify())
-with open('vocabulary/raw/_2kwords.html', 'w', encoding='utf-8') as f:
+with open('raw/_2kwords.html', 'w', encoding='utf-8') as f:
     f.write(_2kwords_soup.prettify())
-with open('vocabulary/raw/_5kwords.html', 'w', encoding='utf-8') as f:
+with open('raw/_5kwords.html', 'w', encoding='utf-8') as f:
     f.write(_5kwords_soup.prettify())
-with open('vocabulary/raw/_10kwords.html', 'w', encoding='utf-8') as f:
+with open('raw/_10kwords.html', 'w', encoding='utf-8') as f:
     f.write(_10kwords_soup.prettify())
+
+
+
+import os
+from bs4 import BeautifulSoup, Comment
+
+# Directory containing the HTML files
+directory = r'C:\Users\pc\pyprojects\KanjiList\kanjilist-live\raw'
+
+# Function to compact HTML content
+def compact_html_file(file_path):
+
+   
+    with open(file_path, 'r', encoding='utf-8') as file:
+        html_content = file.read()
+
+    soup = BeautifulSoup(html_content, 'html.parser')
+
+    # Remove comments
+    for comment in soup.find_all(text=lambda text: isinstance(text, Comment)):
+        comment.extract()
+
+    # Minify the HTML by removing unnecessary whitespace and line breaks
+    compact_html = soup.prettify(formatter=None)
+    compact_html = compact_html.replace('\n', '').replace('  ', '')
+
+    # Write the compacted HTML back to the file or a new file
+    compacted_file_path = file_path.replace('.html', '.html')
+    with open(compacted_file_path, 'w', encoding='utf-8') as file:
+        file.write(compact_html)
+
+# Iterate over all files in the directory
+for filename in os.listdir(directory):
+    if filename.endswith('.html'):
+        file_path = os.path.join(directory, filename)
+        compact_html_file(file_path)
+        print(f"Processed {filename}")
+
 
 
 
