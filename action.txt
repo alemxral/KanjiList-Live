@@ -1,14 +1,19 @@
 Sub DeleteAllSheetsAndCreateNew()
-
     Dim ws As Worksheet
-
-    ' Delete all existing worksheets
-    For Each ws In ThisWorkbook.Worksheets
-        ws.Delete
-    Next ws
-
+    Dim wsNew As Worksheet
+    
+    Application.DisplayAlerts = False ' Suppress confirmation dialogs
+    
     ' Create a new worksheet named "New"
-    ThisWorkbook.Worksheets.Add(After:=ThisWorkbook.Worksheets(ThisWorkbook.Worksheets.Count))
-    ActiveSheet.Name = "New"
-
+    Set wsNew = ThisWorkbook.Worksheets.Add(After:=ThisWorkbook.Worksheets(ThisWorkbook.Worksheets.Count))
+    wsNew.Name = "New"
+    
+    ' Delete all existing worksheets except the new one
+    For Each ws In ThisWorkbook.Worksheets
+        If ws.Name <> "New" Then
+            ws.Delete
+        End If
+    Next ws
+    
+    Application.DisplayAlerts = True ' Re-enable confirmation dialogs
 End Sub
