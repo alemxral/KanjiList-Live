@@ -1,0 +1,14 @@
+Sub DeleteAllSheetsAndCreateNew()
+
+    Dim ws As Worksheet
+
+    ' Delete all existing worksheets
+    For Each ws In ThisWorkbook.Worksheets
+        ws.Delete
+    Next ws
+
+    ' Create a new worksheet named "New"
+    ThisWorkbook.Worksheets.Add(After:=ThisWorkbook.Worksheets(ThisWorkbook.Worksheets.Count))
+    ActiveSheet.Name = "New"
+
+End Sub
