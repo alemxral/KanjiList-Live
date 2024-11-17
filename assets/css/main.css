@@ -2928,6 +2928,16 @@ section,
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   display: none;
+  
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .wrap-modal1 {
+    width: 100%; /* Full width on mobile */
+    height: 90%; /* Optionally increase height for mobile */
+    border-radius: 0; /* Remove rounded corners for mobile */
+  }
 }
 
 /* Show modal */
@@ -2936,23 +2946,30 @@ section,
   visibility: visible;
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
+ 
 }
 
 /* Modal Content */
 .container.modal-content {
+
   padding: 20px;
 }
 
-/* Close Button */
 button.js-hide-modal1 {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+    
+  margin-right: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  position: sticky; /* Makes it sticky within its parent container */
+  top: 0; /* Stick to the top of the container */
+  right: 0px; /* Align to the right inside the container */
   background: none;
   border: none;
   font-size: 20px;
   cursor: pointer;
   color: #333;
+  z-index: 10; /* Ensures it stays above content */
 }
 /* Container for Kanji Symbol */
 #kanjitop {
@@ -3044,10 +3061,14 @@ button.js-hide-modal1 {
 
 
 .tableframe {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  display: flex;
+  overflow-x: auto; /* Adds horizontal scrolling */
+  flex-wrap: wrap;
 }
 
 .tableframe th, .tableframe td {
@@ -3090,6 +3111,11 @@ button.js-hide-modal1 {
   table-layout: fixed; /* Make sure the columns expand to fit the available space */
 }
 
+/* Responsive Styling for Smartphones */
+@media screen and (max-width: 768px) {
+  .tableframe {
+    display: block; /* Stack rows */
+  }
 
 #support-section {
   background-color: var(--background-color);
@@ -3184,4 +3210,5 @@ button.js-hide-modal1 {
     transform: scale(1);
     opacity: 1;
   }
+}
 }
