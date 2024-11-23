@@ -52,7 +52,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     <li><a href="100_words.html">Top Frequent 100 Words</a></li>
           <li><a href="1K_words.html">Top Frequent 1000 Words</a></li>
           <li><a href="2K_words.html">Top Frequent 2000 Words </a></li>
-          <li><a href="5K_words.html">Top Frequent 5000 Words </a></li>       
+          <li><a href="5K_words.html">Top Frequent 5000 Words </a></li>
+          <li><a href="10K_words.html">Top Frequent 10000 Words </a></li>
           
           <li><a href="nouns_list.html">Top Frequent Nouns </a></li>
           <li><a href="adjectives_list.html">Top Frequent Adjectives</a></li>
@@ -101,7 +102,7 @@ if (navmenu) {
           <li><a href="1K_words.html">Top Frequent 1000 Words</a></li>
           <li><a href="2K_words.html">Top Frequent 2000 Words </a></li>
           <li><a href="5K_words.html">Top Frequent 5000 Words </a></li>
-
+          <li><a href="10K_words.html">Top Frequent 10000 Words </a></li>
           
           <li><a href="nouns_list.html">Top Frequent Nouns </a></li>
           <li><a href="adjectives_list.html">Top Frequent Adjectives</a></li>
@@ -134,7 +135,7 @@ if (head) {
   head.innerHTML = `
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - KanjiList.org Bootstrap Template</title>
+  <title>KanjiList.org</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -160,6 +161,32 @@ if (head) {
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
  
+    <!-- Include jQuery from a CDN (Recommended) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+      {
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "name": "Kanjilist",
+          "url": "http://www.kanjilist.org",
+          "logo": "http://www.kanjilist.org/static/icons/favicon.png"
+      }
+      </script>
+      
+      <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){
+          w[l]=w[l]||[];
+          w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+          var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-TG7ZKBSS');</script>
+      <!-- End Google Tag Manager -->
+  <!-- =======================================================
 
   <!-- =======================================================
   * Template Name: KanjiList.org
