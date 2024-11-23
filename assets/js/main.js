@@ -578,4 +578,120 @@ if (head) {
 
 })();
 
+// Array placeholders for Kanji and Vocabulary
+let kanjis = [];
+const vocab = ['こんにちは', 'ありがとう', 'さようなら', 'すみません', 'はい'];
 
+let currentKanjiIndex = 0;
+let currentVocabIndex = 0;
+
+// Load Kanji from CSV
+function loadKanjiFromCSV() {
+    fetch('assets/kanji.csv')
+        .then(response => response.text())
+        .then(data => {
+            parseCSV(data);
+            if (kanjis.length > 0) {
+                showKanji(); // Automatically display the Kanji section once loaded
+            } else {
+                alert('No Kanji data loaded. Please check the CSV file.');
+            }
+        })
+        .catch(error => console.error('Error loading Kanji CSV:', error));
+}
+
+// Parse CSV and extract the "kanji_symbol" column
+function parseCSV(data) {
+    const rows = data.split('\n'); // Split into rows
+    const headers = rows.shift().split('|').map(header => header.trim()); // Get headers and trim whitespace
+    const kanjiSymbolIndex = headers.indexOf('kanji_symbol'); // Find the index of "kanji_symbol"
+
+    if (kanjiSymbolIndex === -1) {
+        console.error('The column "kanji_symbol" was not found in the CSV file.');
+        return;
+    }
+
+    // Extract Kanji symbols
+    kanjis = rows
+        .map(row => row.split('|')[kanjiSymbolIndex]?.trim()) // Get the value in the "kanji_symbol" column
+        .filter(kanji => kanji); // Filter out empty rows or values
+}
+
+// Show Kanji section
+function showKanji() {
+    document.getElementById('kanji-section').style.display = 'block';
+    document.getElementById('vocab-section').style.display = 'none';
+    updateKanjiDisplay();
+}
+
+// Show Vocabulary section
+function showVocabulary() {
+    document.getElementById('kanji-section').style.display = 'none';
+    document.getElementById('vocab-section').style.display = 'block';
+    updateVocabDisplay();
+}
+
+// Update Kanji display
+function updateKanjiDisplay() {
+    if (kanjis.length > 0) {
+        document.getElementById('kanji-char').innerText = kanjis[currentKanjiIndex];
+    } else {
+        document.getElementById('kanji-char').innerText = 'No Kanji available';
+    }
+}
+
+// Navigate to the next Kanji
+function nextKanji() {
+    if (kanjis.length > 0) {
+        currentKanjiIndex = (currentKanjiIndex + 1) % kanjis.length;
+        updateKanjiDisplay();
+    }
+}
+
+// Navigate to the previous Kanji
+function prevKanji() {
+    if (kanjis.length > 0) {
+        currentKanjiIndex = (currentKanjiIndex - 1 + kanjis.length) % kanjis.length;
+        updateKanjiDisplay();
+    }
+}
+
+// Show information about the current Kanji
+function showKanjiInfo() {
+    if (kanjis.length > 0) {
+        const kanji = kanjis[currentKanjiIndex];
+        alert(`Information about ${kanji}: Example info could go here.`);
+    }
+}
+
+// Update Vocabulary display
+function updateVocabDisplay() {
+    document.getElementById('vocab-word').innerText = vocab[currentVocabIndex];
+}
+
+// Navigate to the next Vocabulary word
+function nextVocab() {
+    currentVocabIndex = (currentVocabIndex + 1) % vocab.length;
+    updateVocabDisplay();
+}
+
+// Navigate to the previous Vocabulary word
+function prevVocab() {
+    currentVocabIndex = (currentVocabIndex - 1 + vocab.length) % vocab.length;
+    updateVocabDisplay();
+}
+
+// Show information about the current Vocabulary word
+function showVocabInfo() {
+    const word = vocab[currentVocabIndex];
+    alert(`Information about ${word}: Example info could go here.`);
+}
+
+// Update difficulty (placeholder for functionality)
+function updateDifficulty() {
+    const difficulty = document.getElementById('difficulty').value;
+    alert(`Difficulty set to: ${difficulty}`);
+}
+
+// Load Kanji on page load
+document.addEventListener('DOMContentLoaded', loadKanjiFromCSV);

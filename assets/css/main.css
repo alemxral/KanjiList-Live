@@ -3225,8 +3225,9 @@ button.js-hide-modal1 {
 }
 
 /* Kanji and Vocabulary Display */
+/* Kanji and Vocabulary Display */
 .kanji-char {
-  font-size: 10rem; /* Larger Kanji Symbol */
+  font-size: 10rem; /* Default size for larger screens */
   font-weight: bold;
   text-align: center;
   display: inline-block;
@@ -3237,7 +3238,7 @@ button.js-hide-modal1 {
 }
 
 .vocab-word {
-  font-size: 2rem; /* Larger Kanji Symbol */
+  font-size: 2.5rem; /* Default size for larger screens */
   font-weight: bold;
   text-align: center;
   display: inline-block;
@@ -3246,6 +3247,48 @@ button.js-hide-modal1 {
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
   line-height: 1.2;
 }
+
+/* Responsive Font Sizes */
+@media screen and (max-width: 1200px) {
+  .kanji-char {
+    font-size: 8rem; /* Slightly smaller for medium screens */
+  }
+
+  .vocab-word {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .kanji-char {
+    font-size: 6rem; /* Smaller for tablets */
+  }
+
+  .vocab-word {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .kanji-char {
+    font-size: 4rem; /* Smaller for smaller tablets and large phones */
+  }
+
+  .vocab-word {
+    font-size: 1.9rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .kanji-char {
+    font-size: 3rem; /* Smallest for mobile phones */
+  }
+
+  .vocab-word {
+    font-size: 1.7rem;
+  }
+}
+
 
 /* Quiz Options Panel */
 .quiz-options {
@@ -3338,9 +3381,7 @@ button.js-hide-modal1 {
 
 /* For Mobile Responsiveness */
 @media (max-width: 768px) {
-  .kanji-char, .vocab-word {
-      font-size: 7rem; /* Slightly smaller Kanji for small screens */
-  }
+  
 
   .quiz-actions .btn {
       padding: 10px 20px;

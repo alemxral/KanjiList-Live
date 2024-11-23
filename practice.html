@@ -146,74 +146,65 @@
         
         
         
-            <!-- Starter Section Section -->
-            <section id="starter-section" class="starter-section section">
-        
-            
-        
-              <div class="container kanjilist" data-aos="fade-up">
-                <div class="kanji-container">
-
-                  <div class="main-block">
-                    <!-- Introduction Section -->
-                  
-                    
-                  	<!-- ##### Main Copy ##### -->
-
-
-
-                        
-                          
-                    <section id="under-construction">
-                  
-                  </section>
-                  
-        
-        
-        
-        
-        
-                
-        
-                </div>
-                 
-                  <div class="main-block">
-                    <!-- Introduction Section -->
-                  
-                    
-                  	<!-- ##### Main Copy ##### -->
-
-
-
-                        
-                          
-                    <section id="under-construction">
-                      <div class="construction-message">
-                          <h2>🚧 This Section is Under Construction 🚧</h2>
-                          <p>
-                              We're working hard to bring you new content. Please check back soon for updates!
-                          </p>
-                      </div>
-                  </section>
-                  
-        
-        
-        
-        
-        
-                
-        
-                </div>
-                  
-            
-                     
-        
-                  </div>
-          
-            
-          
-            </div>
+<!-- Starter Section -->
+<section id="starter-section" class="starter-section section">
+  <div class="container kanjilist" data-aos="fade-up">
+      <div class="kanji-container">
+          <!-- Panel for Quiz Options -->
+          <div class="quiz-options">
+              <!-- Buttons to switch between Kanji and Vocabulary -->
+              <div class="toggle-buttons">
+                  <button id="kanji-btn" class="btn toggle-btn" onclick="showKanji()">Kanji</button>
+                  <button id="vocab-btn" class="btn toggle-btn" onclick="showVocabulary()">Vocabulary</button>
               </div>
+
+              <!-- Difficulty Selector -->
+              <div class="difficulty-selector">
+                  <label for="difficulty">Select Difficulty:</label>
+                  <select id="difficulty" onchange="updateDifficulty()">
+                      <option value="easy">Easy</option>
+                      <option value="medium">Medium</option>
+                      <option value="hard">Hard</option>
+                  </select>
+              </div>
+          </div>
+
+          <!-- Main Content Area -->
+          <div id="quiz-content" class="main-block">
+              <!-- Kanji Section -->
+              <section id="kanji-section" style="display: none;">
+                  <div class="quiz-header">
+                      <h2>Practice Kanji</h2>
+                  </div>
+                  <div class="kanji-display">
+                      <span id="kanji-char" class="kanji-char">日</span>
+                  </div>
+                  <div class="quiz-actions">
+                      <button class="btn action-btn" onclick="prevKanji()">⬅ Previous</button>
+                      <button class="btn action-btn" onclick="showKanjiInfo()">ℹ Show Info</button>
+                      <button class="btn action-btn" onclick="nextKanji()">Next ➡</button>
+                  </div>
+              </section>
+
+              <!-- Vocabulary Section -->
+              <section id="vocab-section" style="display: none;">
+                  <div class="quiz-header">
+                      <h2>Practice Vocabulary</h2>
+                  </div>
+                  <div class="vocab-display">
+                      <span id="vocab-word" class="vocab-word">こんにちは</span>
+                  </div>
+                  <div class="quiz-actions">
+                      <button class="btn action-btn" onclick="prevVocab()">⬅ Previous</button>
+                      <button class="btn action-btn" onclick="showVocabInfo()">ℹ Show Info</button>
+                      <button class="btn action-btn" onclick="nextVocab()">Next ➡</button>
+                  </div>
+              </section>
+          </div>
+      </div>
+  </div>
+</section>
+
         
         
             <!-- Modal Structure -->
