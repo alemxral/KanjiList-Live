@@ -1,4 +1,209 @@
-User-agent: *
-Disallow: /private/
-Allow: /public/
-Sitemap: https://kanjilist.org/sitemap.xml
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                            C EXAM COMMON EXERCISES                         */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+#include <fcntl.h> // For file operations
+
+/* ------------------ Utility functions ------------------ */
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *s)
+{
+	while (*s)
+		write(1, s++, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb < 0)
+	{
+		write(1, "-", 1);
+		nb = -nb;
+	}
+	if (nb >= 10)
+		ft_putnbr(nb / 10);
+	ft_putchar((nb % 10) + '0');
+}
+
+int	ft_strlen(char *str)
+{
+	int i = 0;
+	while (str[i])
+		i++;
+	return i;
+}
+
+/* ------------------ String and char manipulation ------------------ */
+
+void	ft_rotone(char *str)
+{
+	int i = 0;
+	while (str[i])
+	{
+		if (str[i] == 'z')
+			ft_putchar('a');
+		else if (str[i] == 'Z')
+			ft_putchar('A');
+		else if ((str[i] >= 'a' && str[i] < 'z') || (str[i] >= 'A' && str[i] < 'Z'))
+			ft_putchar(str[i] + 1);
+		else
+			ft_putchar(str[i]);
+		i++;
+	}
+}
+
+void	ft_alpha_mirror(char *str)
+{
+	int i = 0;
+	while (str[i])
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			ft_putchar('z' - (str[i] - 'a'));
+		else if (str[i] >= 'A' && str[i] <= 'Z')
+			ft_putchar('Z' - (str[i] - 'A'));
+		else
+			ft_putchar(str[i]);
+		i++;
+	}
+}
+
+void	ft_ulstr(char *str)
+{
+	for (int i = 0; str[i]; i++)
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			ft_putchar(str[i] - 32);
+		else if (str[i] >= 'A' && str[i] <= 'Z')
+			ft_putchar(str[i] + 32);
+		else
+			ft_putchar(str[i]);
+	}
+}
+
+void	ft_cleanstr(char *str)
+{
+	for (int i = 0; str[i]; i++)
+		if (str[i] != ' ' && str[i] != '\' && str[i] != '\')
+			ft_putchar(str[i]);
+}
+
+/* ------------------ Numbers ------------------ */
+
+void	write_number(int nb)
+{
+	if (nb >= 10)
+		write_number(nb / 10);
+	ft_putchar((nb % 10) + '0');
+}
+
+int	ft_atoi(char *str)
+{
+	int result = 0;
+	while (*str >= '0' && *str <= '9')
+		result = result * 10 + (*str++ - '0');
+	return result;
+}
+
+/* ------------------ ft_itoa_basic ------------------ */
+
+void	reverse(char *str, int len)
+{
+	char temp;
+	for (int i = 0; i < len / 2; i++)
+	{
+		temp = str[i];
+		str[i] = str[len - 1 - i];
+		str[len - 1 - i] = temp;
+	}
+}
+
+int	ft_itoa_basic(int nb, char *buf)
+{
+	int i = 0, is_neg = 0;
+	if (nb == 0)
+	{
+		buf[i++] = '0';
+		buf[i] = '\0';
+		return i;
+	}
+	if (nb < 0)
+	{
+		is_neg = 1;
+		nb = -nb;
+	}
+	while (nb > 0)
+	{
+		buf[i++] = (nb % 10) + '0';
+		nb /= 10;
+	}
+	if (is_neg)
+		buf[i++] = '-';
+	buf[i] = '\0';
+	reverse(buf, i);
+	return i;
+}
+
+/* ------------------ File Copy ------------------ */
+
+void	copy_file_append(const char *src, const char *dest)
+{
+	char buf[1024];
+	int in_fd = open(src, O_RDONLY);
+	int out_fd = open(dest, O_WRONLY | O_CREAT | O_APPEND, 0644);
+	int r;
+	if (in_fd < 0 || out_fd < 0)
+		return;
+	while ((r = read(in_fd, buf, 1024)) > 0)
+		write(out_fd, buf, r);
+	close(in_fd);
+	close(out_fd);
+}
+
+/* ------------------ Tests in main ------------------ */
+
+int	main(void)
+{
+	ft_putstr("1. ft_strlen: ");
+	ft_putnbr(ft_strlen("hello world"));
+	ft_putchar('\n');
+
+	ft_putstr("2. ft_rotone: ");
+	ft_rotone("Hello Zz!");
+	ft_putchar('\n');
+
+	ft_putstr("3. ft_alpha_mirror: ");
+	ft_alpha_mirror("abc XYZ");
+	ft_putchar('\n');
+
+	ft_putstr("4. ft_ulstr: ");
+	ft_ulstr("HeLLo 42!");
+	ft_putchar('\n');
+
+	ft_putstr("5. ft_cleanstr: ");
+	ft_cleanstr(" He llo \t\nWor ld ");
+	ft_putchar('\n');
+
+	ft_putstr("6. ft_itoa_basic: ");
+	char buffer[20];
+	ft_itoa_basic(12345, buffer);
+	ft_putstr(buffer);
+	ft_putchar('\n');
+
+	ft_putstr("7. Copying source.txt to dest.txt...\n");
+	copy_file_append("source.txt", "dest.txt");
+
+	ft_putstr("8. Alphabet with for loop: ");
+	for (char c = 'a'; c <= 'z'; c++)
+		ft_putchar(c);
+	ft_putchar('\n');
+
+	return 0;
+}
